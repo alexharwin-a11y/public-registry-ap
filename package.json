@@ -1,0 +1,12 @@
+{
+  "name": "federal-register-k12-monitor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/local_dev.mjs",
+    "dev:netlify": "netlify dev",
+    "dev:static": "python3 -m http.server 8888",
+    "check": "node --check netlify/functions/search.mjs"
+  }
+}

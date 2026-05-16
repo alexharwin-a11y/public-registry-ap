@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Federal Register K-12 Monitor</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --panel: #ffffff;
+      --ink: #1d2430;
+      --muted: #647084;
+      --line: #d9dee7;
+      --accent: #2458a6;
+      --accent-dark: #183f78;
+      --warn: #8a4b00;
+      --shadow: 0 12px 28px rgba(29, 36, 48, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .site-header {
+      background: #172033;
+      color: #fff;
+      border-bottom: 4px solid #d8a31d;
+    }
+
+    .header-inner,
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      padding: 28px 0 24px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 6px;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: #d7ddea;
+      font-size: 1.02rem;
+    }
+
+    main {
+      padding: 28px 0 48px;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .panel,
+    .entry-card,
+    details.week {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 20px;
+    }
+
+    .summary-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .summary-list li + li {
+      margin-top: 8px;
+    }
+
+    .entry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .entry-card {
+      padding: 16px;
+    }
+
+    .entry-card h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 8px;
+      border: 1px solid #cad3e2;
+      border-radius: 999px;
+      color: #263449;
+      background: #f3f6fa;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .field-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .field-list div {
+      min-width: 0;
+    }
+
+    .field-list dt {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .field-list dd {
+      margin: 2px 0 0;
+      overflow-wrap: anywhere;
+    }
+
+    .search-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    input[type="search"] {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid #b7c2d3;
+      border-radius: 6px;
+      padding: 0 13px;
+      color: var(--ink);
+      font: inherit;
+      background: #fff;
+    }
+
+    button {
+      min-height: 46px;
+      border: 0;
+      border-radius: 6px;
+      padding: 0 18px;
+      color: #fff;
+      background: var(--accent);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover,
+    button:focus-visible {
+      background: var(--accent-dark);
+    }
+
+    button:disabled {
+      cursor: progress;
+      opacity: 0.72;
+    }
+
+    .disclaimer {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .answer {
+      min-height: 96px;
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      white-space: pre-wrap;
+    }
+
+    .answer[data-state="error"] {
+      border-color: #d39a8c;
+      color: #7f2418;
+      background: #fff7f5;
+    }
+
+    details.week {
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    details.week > summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+
+    details.week > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .week-body {
+      padding: 0 16px 16px;
+    }
+
+    .empty {
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      .header-inner,
+      main {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .section-head,
+      .search-form {
+        display: block;
+      }
+
+      .section-head .meta {
+        margin-top: 4px;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>Federal Register K-12 Monitor</h1>
+      <p class="subtitle">Daily tracking of federal education policy affecting K-12 schools</p>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="latest-title">
+      <div class="section-head">
+        <h2 id="latest-title">Latest Report</h2>
+        <div class="meta" id="latest-meta"></div>
+      </div>
+      <div class="panel" id="latest-panel">
+        <p class="empty">Loading latest report...</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="search-title">
+      <div class="section-head">
+        <h2 id="search-title">Ask Claude</h2>
+        <div class="meta">Searches logged entries only</div>
+      </div>
+      <div class="panel">
+        <form class="search-form" id="search-form">
+          <input id="query" name="query" type="search" maxlength="500" placeholder="Ask anything - e.g. tell me notices about Vermont or any NPRMs with upcoming deadlines?" autocomplete="off">
+          <button id="search-button" type="submit">Ask</button>
+        </form>
+        <p class="disclaimer">Answers are based on entries logged in this tracker.</p>
+        <div class="answer" id="answer" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="archive-title">
+      <div class="section-head">
+        <h2 id="archive-title">Full Archive</h2>
+        <div class="meta" id="archive-meta"></div>
+      </div>
+      <div id="archive"></div>
+    </section>
+  </main>
+
+  <script>
+    const state = {
+      config: null,
+      updates: null
+    };
+
+    const latestPanel = document.querySelector("#latest-panel");
+    const latestMeta = document.querySelector("#latest-meta");
+    const archive = document.querySelector("#archive");
+    const archiveMeta = document.querySelector("#archive-meta");
+    const searchForm = document.querySelector("#search-form");
+    const queryInput = document.querySelector("#query");
+    const searchButton = document.querySelector("#search-button");
+    const answer = document.querySelector("#answer");
+
+    loadUpdates();
+    searchForm.addEventListener("submit", handleSearch);
+
+    async function loadUpdates() {
+      try {
+        const config = await fetchConfig();
+        const response = await fetch(config.updatesJsonUrl, { headers: { "accept": "application/json" } });
+        if (!response.ok) throw new Error(`Archive returned ${response.status}`);
+        const updates = await response.json();
+        state.updates = Array.isArray(updates) ? updates : [];
+        renderLatest(state.updates);
+        renderArchive(state.updates);
+      } catch (error) {
+        latestPanel.innerHTML = `<p class="empty">Could not load updates: ${escapeHtml(error.message)}</p>`;
+        archive.innerHTML = "";
+      }
+    }
+
+    async function fetchConfig() {
+      if (state.config) return state.config;
+
+      const response = await fetch("/api/config", { headers: { "accept": "application/json" } });
+      if (!response.ok) throw new Error(`Config returned ${response.status}`);
+      const config = await response.json();
+      state.config = {
+        updatesJsonUrl: config.updatesJsonUrl || "/data/updates.json"
+      };
+      return state.config;
+    }
+
+    function renderLatest(updates) {
+      if (!updates.length) {
+        latestMeta.textContent = "";
+        latestPanel.innerHTML = '<p class="empty">No Federal Register entries have been logged yet.</p>';
+        return;
+      }
+
+      const sorted = [...updates].sort((a, b) => String(b.dateFound).localeCompare(String(a.dateFound)));
+      const latestDate = sorted[0].dateFound;
+      const entries = sorted.filter((entry) => entry.dateFound === latestDate);
+      const bullets = entries.flatMap((entry) => entry.executiveSummaryBullets || []);
+
+      latestMeta.textContent = `${formatDate(latestDate)} - ${entries.length} item${entries.length === 1 ? "" : "s"}`;
+      latestPanel.innerHTML = `
+        <h3>Executive Summary</h3>
+        ${bullets.length ? `<ul class="summary-list">${bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : '<p class="empty">No executive summary bullets available.</p>'}
+        <div class="entry-grid">${entries.map(renderEntryCard).join("")}</div>
+      `;
+    }
+
+    function renderArchive(updates) {
+      archiveMeta.textContent = `${updates.length} logged item${updates.length === 1 ? "" : "s"}`;
+      if (!updates.length) {
+        archive.innerHTML = '<div class="panel"><p class="empty">Archive is empty.</p></div>';
+        return;
+      }
+
+      const weeks = new Map();
+      for (const entry of [...updates].sort((a, b) => String(b.dateFound).localeCompare(String(a.dateFound)))) {
+        const week = entry.weekOf || "Unspecified week";
+        if (!weeks.has(week)) weeks.set(week, []);
+        weeks.get(week).push(entry);
+      }
+
+      archive.innerHTML = [...weeks.entries()].map(([week, entries], index) => `
+        <details class="week" ${index === 0 ? "open" : ""}>
+          <summary>
+            <span>Week of ${escapeHtml(week)}</span>
+            <span class="meta">${entries.length} item${entries.length === 1 ? "" : "s"}</span>
+          </summary>
+          <div class="week-body">
+            <div class="entry-grid">${entries.map(renderEntryCard).join("")}</div>
+          </div>
+        </details>
+      `).join("");
+    }
+
+    function renderEntryCard(entry) {
+      const link = entry.federalRegisterLink ? `<a href="${escapeAttribute(entry.federalRegisterLink)}" target="_blank" rel="noreferrer">Federal Register document</a>` : "";
+      return `
+        <article class="entry-card">
+          <h3>${escapeHtml(entry.title || "Untitled entry")}</h3>
+          <div class="badges">
+            ${entry.documentType ? `<span class="badge">${escapeHtml(entry.documentType)}</span>` : ""}
+            ${entry.categoryType ? `<span class="badge">${escapeHtml(entry.categoryType)}</span>` : ""}
+            ${entry.dateFound ? `<span class="badge">${escapeHtml(formatDate(entry.dateFound))}</span>` : ""}
+          </div>
+          <dl class="field-list">
+            ${field("Agency", entry.agency)}
+            ${field("Stage", entry.regulatoryStage)}
+            ${field("Comment/Application Deadline", entry.commentDeadline)}
+            ${field("Effective Date", entry.effectiveDate)}
+            ${field("K-12 Relevance", entry.k12Relevance)}
+            ${field("Summary", entry.summary)}
+            ${field("Context", entry.context)}
+            ${link ? `<div><dt>Link</dt><dd>${link}</dd></div>` : ""}
+          </dl>
+        </article>
+      `;
+    }
+
+    function field(label, value) {
+      if (!value) return "";
+      return `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`;
+    }
+
+    async function handleSearch(event) {
+      event.preventDefault();
+      const query = queryInput.value.trim();
+      if (!query) return;
+
+      answer.dataset.state = "";
+      answer.textContent = "";
+      searchButton.disabled = true;
+
+      try {
+        const response = await fetch("/api/search", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ query })
+        });
+
+        if (!response.ok) {
+          const text = await response.text();
+          throw new Error(readErrorMessage(text) || `Search failed with status ${response.status}`);
+        }
+        if (!response.body) throw new Error("Streaming is not available in this browser.");
+
+        await readAnthropicSse(response.body, (text) => {
+          answer.textContent += text;
+        });
+
+        if (!answer.textContent.trim()) {
+          answer.textContent = "No answer text was returned.";
+        }
+      } catch (error) {
+        answer.dataset.state = "error";
+        answer.textContent = error.message;
+      } finally {
+        searchButton.disabled = false;
+      }
+    }
+
+    async function readAnthropicSse(body, onText) {
+      const reader = body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const events = buffer.split("\n\n");
+        buffer = events.pop() || "";
+        for (const eventText of events) {
+          handleSseEvent(eventText, onText);
+        }
+      }
+
+      if (buffer.trim()) {
+        handleSseEvent(buffer, onText);
+      }
+    }
+
+    function handleSseEvent(eventText, onText) {
+      const lines = eventText.split(/\r?\n/);
+      for (const line of lines) {
+        if (!line.startsWith("data:")) continue;
+        const data = line.slice(5).trim();
+        if (!data || data === "[DONE]") continue;
+        try {
+          const event = JSON.parse(data);
+          if (event.type === "content_block_delta" && event.delta && event.delta.type === "text_delta") {
+            onText(event.delta.text || "");
+          } else if (event.type === "error" && event.error) {
+            throw new Error(event.error.message || "Claude stream error");
+          }
+        } catch (error) {
+          if (error instanceof SyntaxError) continue;
+          throw error;
+        }
+      }
+    }
+
+    function readErrorMessage(text) {
+      try {
+        const parsed = JSON.parse(text);
+        return parsed.error || parsed.detail || "";
+      } catch {
+        return text;
+      }
+    }
+
+    function formatDate(value) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value))) return value || "";
+      const date = new Date(`${value}T00:00:00`);
+      return date.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value).replaceAll("`", "&#96;");
+    }
+  </script>
+</body>
+</html>
