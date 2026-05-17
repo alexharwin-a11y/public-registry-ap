@@ -4,7 +4,7 @@ const MAX_QUERY_LENGTH = 500;
 const MAX_ENTRIES_IN_CONTEXT = 200;
 const MAX_CONTEXT_CHARS = 120_000;
 const ARCHIVE_CACHE_MS = 5 * 60 * 1000;
-const DEFAULT_MODEL = "claude-3-5-haiku-20241022";
+const DEFAULT_MODEL = "claude-haiku-4-5-20251001";
 
 const rateLimitMap = new Map();
 let archiveCache = { url: "", fetchedAt: 0, entries: null };

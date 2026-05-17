@@ -15,7 +15,7 @@ Set these in Netlify site settings:
 
 - `ANTHROPIC_API_KEY`
 - `UPDATES_JSON_URL`, for example `https://raw.githubusercontent.com/YOUR_USER/federal-register-k12/main/data/updates.json`
-- `ANTHROPIC_MODEL` optional, defaults to `claude-3-5-haiku-20241022`
+- `ANTHROPIC_MODEL` optional, defaults to `claude-haiku-4-5-20251001`
 
 ## Cowork Task Secrets
 
