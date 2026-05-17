@@ -1,1 +1,87 @@
-[]
+[
+  {
+    "id": "2026-05-11_ED-2026-OPE-0038",
+    "dateFound": "2026-05-11",
+    "weekOf": "May 9",
+    "docNumber": "ED-2026-OPE-0038",
+    "title": "Teacher Quality Partnership Program",
+    "agency": "Dept. of Education + Dept. of Labor",
+    "documentType": "Notice",
+    "categoryType": "Grant Competition",
+    "regulatoryStage": "Grant competition open",
+    "commentDeadline": "N/A",
+    "effectiveDate": "N/A",
+    "k12Relevance": "Funds partnerships between higher education institutions and high-need K-12 schools to strengthen teacher preparation pipelines for underserved communities.",
+    "summary": "ED and DOL jointly opened competition for Teacher Quality Partnership grants, which support residency and clinical preparation programs placing teacher candidates in high-need K-12 schools. The program is administered under an interagency agreement between ED and DOL, reflecting a broader policy framing of teacher supply as a workforce development issue.",
+    "context": "The ED-DOL partnership structure is new this cycle. Education advocates have expressed mixed views — some welcome the additional DOL resources, others worry about teacher prep being narrowed toward labor market outcomes over pedagogical quality. No press release issued at time of publication.",
+    "federalRegisterLink": "https://www.federalregister.gov/documents/2026/05/11",
+    "executiveSummaryBullets": [
+      "Teacher Quality Partnership grant now jointly administered by ED and DOL — structural shift framing teacher prep as workforce development.",
+      "Program targets high-need K-12 schools; interagency structure is new this cycle and reflects broader ED-DOL policy alignment."
+    ]
+  },
+  {
+    "id": "2026-05-12_ED-2026-OCTAE-0021",
+    "dateFound": "2026-05-12",
+    "weekOf": "May 9",
+    "docNumber": "ED-2026-OCTAE-0021",
+    "title": "Career Pathways Exploration",
+    "agency": "Dept. of Education + Dept. of Labor",
+    "documentType": "Notice",
+    "categoryType": "Grant Competition",
+    "regulatoryStage": "Grant competition open",
+    "commentDeadline": "2026-06-09",
+    "effectiveDate": "N/A",
+    "k12Relevance": "State-level grants to build K-12 career exploration and pathway programs connecting secondary students to employer partnerships and industry credentials.",
+    "summary": "ED and DOL opened a competitive grant for states to develop K-12 career pathways infrastructure. The program emphasizes employer partnerships, labor market alignment, and industry-recognized credentials for secondary students. States must coordinate across education and workforce agencies to apply.",
+    "context": "The June 9 deadline gives states less than 30 days from publication to apply — an unusually compressed window for an interagency grant requiring state-level coordination. Education officials in several states flagged the timeline publicly. Smaller states and those without existing interagency infrastructure are at a significant disadvantage.",
+    "federalRegisterLink": "https://www.federalregister.gov/documents/2026/05/12",
+    "executiveSummaryBullets": [
+      "Career Pathways grant deadline is June 9 — less than 30 days for states to apply for a complex interagency grant. Unusually tight.",
+      "Program frames K-12 education explicitly as workforce pipeline; third ED-DOL joint grant competition this week."
+    ]
+  },
+  {
+    "id": "2026-05-13_ED-2026-OESE-0017",
+    "dateFound": "2026-05-13",
+    "weekOf": "May 9",
+    "docNumber": "ED-2026-OESE-0017",
+    "title": "Comprehensive Centers Program",
+    "agency": "Dept. of Education (OESE)",
+    "documentType": "Notice",
+    "categoryType": "Grant Competition",
+    "regulatoryStage": "Grant competition open",
+    "commentDeadline": "TBD",
+    "effectiveDate": "N/A",
+    "k12Relevance": "Funds regional and content centers that provide technical assistance directly to state education agencies and K-12 school districts implementing federal education programs.",
+    "summary": "OESE opened the standard Comprehensive Centers grant competition. These centers form the backbone of federal technical assistance to states — supporting implementation of federal K-12 education law, school improvement initiatives, and educator effectiveness programs. No significant changes to program structure were flagged this cycle.",
+    "context": "This is a routine reauthorization of an established infrastructure grant. The network of Comprehensive Centers is how federal K-12 policy gets translated into state practice, so who wins these grants matters for implementation of broader ED priorities. Most routine item of the week.",
+    "federalRegisterLink": "https://www.federalregister.gov/documents/2026/05/13",
+    "executiveSummaryBullets": [
+      "Comprehensive Centers grant competition opened — routine reauthorization of the federal technical assistance network for state K-12 agencies.",
+      "No structural changes this cycle; most routine item of the week."
+    ]
+  },
+  {
+    "id": "2026-05-14_ED-2026-OPE-0042",
+    "dateFound": "2026-05-14",
+    "weekOf": "May 9",
+    "docNumber": "ED-2026-OPE-0042",
+    "title": "Ready to Learn Television Programming",
+    "agency": "Dept. of Education + Dept. of Health & Human Services",
+    "documentType": "Notice",
+    "categoryType": "Grant Competition",
+    "regulatoryStage": "Grant competition open — new grantee preference",
+    "commentDeadline": "TBD",
+    "effectiveDate": "N/A",
+    "k12Relevance": "Funds development and distribution of educational TV and digital media for preschool and early elementary children (preK–Grade 2), including PBS KIDS programming historically.",
+    "summary": "ED and HHS reopened the Ready to Learn grant — which funds educational children's programming — with a 'New Potential Grantees' competitive preference. The prior grantee, CPB/PBS, had their RTL grant terminated in 2025. The notice is structured to favor organizations that have not previously received RTL funding, effectively disadvantaging PBS KIDS.",
+    "context": "This is the most significant item of the week. Ready to Learn has historically funded PBS KIDS programming (Sesame Street, Daniel Tiger, etc.). After CPB had its grant terminated amid broader federal public media cuts in 2025, this reopening with an explicit preference against prior grantees appears designed to replace PBS KIDS. CPB and public broadcasting advocates formally objected to the termination. No equivalent production and distribution network currently exists outside of public broadcasting.",
+    "federalRegisterLink": "https://www.federalregister.gov/documents/2026/05/14",
+    "executiveSummaryBullets": [
+      "Ready to Learn reopened with explicit 'New Potential Grantees' preference — effectively sidelines PBS KIDS after CPB grant termination in 2025.",
+      "No alternative applicant has the content infrastructure PBS KIDS built over decades. Public media advocates have formally objected.",
+      "Story of the week for education and media reporters."
+    ]
+  }
+]
